@@ -171,7 +171,7 @@
     <div class="container">
         <div class="row row-content">
             <div class="col">
-                <div class="carousel slide" id="mycarousel" data-ride="carousel">
+                <div class="carousel slide" id="mycarousel" data-ride="carousel" data-interval="4000">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img src="img/uthappizza.png" alt="uthapizza" class="d-block img-fluid">
@@ -227,6 +227,10 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btm-sm" id="carousel-pause"><span class="fa fa-pause"></span></button>
+                        <button class="btn btn-danger btm-sm" id="carousel-play"><span class="fa fa-play"></span></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -349,11 +353,17 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
+    <script>
+        $(document).ready(function(){
+            $("#mycarousel").carousel({interval:2000});
+            $("#carousel-pause").click(function(){
+                $("#mycarousel").carousel("pause");
+            });
+            $("#carousel-play").click(function(){
+                $("#mycarousel").carousel("cycle");
+            });
         });
-    </script> -->
+    </script>
 
 </body>
 
